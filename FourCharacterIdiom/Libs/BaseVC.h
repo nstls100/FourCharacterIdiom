@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "IdiomLib.h"
 
-@interface BaseVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface BaseVC : UIViewController
 
 @end

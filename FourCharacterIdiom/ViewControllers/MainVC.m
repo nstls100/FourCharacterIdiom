@@ -35,18 +35,21 @@
     [topRightBtnItem setCustomView:topRightBtn];
     [self.navigationItem setRightBarButtonItem:topRightBtnItem];
     
+    self.resultArr = [[IdiomLib sharedIdiomLib] dbTest];
 }
 
 #pragma mark - 테이블뷰 델리킷 구현
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.resultArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    DataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    NSDictionary *cellDic = self.resultArr[indexPath.row];
+    [cell setDataCell:cellDic index:indexPath.row];
     return cell;
 }
 
