@@ -9,9 +9,11 @@
 #import "BaseVC.h"
 #import "DataCell.h"
 
-@interface MainVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
+@interface MainVC : BaseVC<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UIView *viewIdiom;
-@property (strong, nonatomic) NSMutableArray *resultArr;
+@property (strong, nonatomic) NSMutableArray *totalArr;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

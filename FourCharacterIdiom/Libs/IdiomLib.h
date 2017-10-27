@@ -12,4 +12,5 @@
 @interface IdiomLib : NSObject
 + (IdiomLib*)sharedIdiomLib;
 -(NSMutableArray*)dbTest;
+-(NSMutableArray*)dbTest1:(NSString *)keyWord;
 @end

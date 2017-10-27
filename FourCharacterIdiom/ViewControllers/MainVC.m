@@ -35,25 +35,46 @@
     [topRightBtnItem setCustomView:topRightBtn];
     [self.navigationItem setRightBarButtonItem:topRightBtnItem];
     
-    self.resultArr = [[IdiomLib sharedIdiomLib] dbTest];
+    self.totalArr = [[IdiomLib sharedIdiomLib] dbTest];
 }
 
 #pragma mark - 테이블뷰 델리킷 구현
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.resultArr.count;
+    return self.totalArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    NSDictionary *cellDic = self.resultArr[indexPath.row];
+    NSDictionary *cellDic = self.totalArr[indexPath.row];
     [cell setDataCell:cellDic index:indexPath.row];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
+#pragma mark - 서비차 델리킷 구현
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSLog(@"%@", searchText);
+    
+    if([searchText isEqualToString:@""])
+    {
+        self.totalArr = [[IdiomLib sharedIdiomLib] dbTest];
+        [self.searchBar resignFirstResponder];
+    }else{
+        self.totalArr = [[IdiomLib sharedIdiomLib] dbTest1:searchText];
+    }
+    
+    [self.tableView reloadData];
+    
+}
 
 
 
