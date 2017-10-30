@@ -8,6 +8,7 @@
 
 #import "CommonLib.h"
 #import "FMDB.h"
+#import "SWRevealViewController.h"
 
 @interface IdiomLib : NSObject
 + (IdiomLib*)sharedIdiomLib;

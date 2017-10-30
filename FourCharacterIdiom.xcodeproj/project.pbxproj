@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		086291D2D75756900D0406C6 /* libPods-FourCharacterIdiom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB49B02E9B45FF629BE8DFD /* libPods-FourCharacterIdiom.a */; };
+		6B74B3EE1FA752F10048355B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B3ED1FA752F10048355B /* SWRevealViewController.m */; };
+		6B74B3F11FA760430048355B /* SideMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B3F01FA760430048355B /* SideMenuVC.m */; };
 		6BB140291FA2F77900DB0693 /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB140281FA2F77900DB0693 /* DataCell.m */; };
 		6BEB84F41FA1CEAB0028D2D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F31FA1CEAB0028D2D2 /* main.m */; };
 		6BEB84F71FA1CEAB0028D2D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F61FA1CEAB0028D2D2 /* AppDelegate.m */; };
@@ -23,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		3FB49B02E9B45FF629BE8DFD /* libPods-FourCharacterIdiom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FourCharacterIdiom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B74B3EC1FA752F10048355B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		6B74B3ED1FA752F10048355B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		6B74B3EF1FA760430048355B /* SideMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuVC.h; sourceTree = "<group>"; };
+		6B74B3F01FA760430048355B /* SideMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuVC.m; sourceTree = "<group>"; };
 		6BB140271FA2F77900DB0693 /* DataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCell.h; sourceTree = "<group>"; };
 		6BB140281FA2F77900DB0693 /* DataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
 		6BEB84EF1FA1CEAB0028D2D2 /* FourCharacterIdiom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourCharacterIdiom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +137,8 @@
 		6BEB850E1FA2C8130028D2D2 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				6B74B3EC1FA752F10048355B /* SWRevealViewController.h */,
+				6B74B3ED1FA752F10048355B /* SWRevealViewController.m */,
 				6BEB85161FA2C9D50028D2D2 /* CommonLib.h */,
 				6BEB85171FA2C9D50028D2D2 /* CommonLib.m */,
 				6BEB85191FA2C9EF0028D2D2 /* IdiomLib.h */,
@@ -144,6 +152,8 @@
 		6BEB85121FA2C8520028D2D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B74B3EF1FA760430048355B /* SideMenuVC.h */,
+				6B74B3F01FA760430048355B /* SideMenuVC.m */,
 				6BEB85131FA2C8520028D2D2 /* MainVC.h */,
 				6BEB85141FA2C8520028D2D2 /* MainVC.m */,
 			);
@@ -286,7 +296,9 @@
 			files = (
 				6BEB851B1FA2C9EF0028D2D2 /* IdiomLib.m in Sources */,
 				6BEB84F71FA1CEAB0028D2D2 /* AppDelegate.m in Sources */,
+				6B74B3F11FA760430048355B /* SideMenuVC.m in Sources */,
 				6BEB85151FA2C8520028D2D2 /* MainVC.m in Sources */,
+				6B74B3EE1FA752F10048355B /* SWRevealViewController.m in Sources */,
 				6BEB84F41FA1CEAB0028D2D2 /* main.m in Sources */,
 				6BEB85181FA2C9D50028D2D2 /* CommonLib.m in Sources */,
 				6BEB85111FA2C8280028D2D2 /* BaseVC.m in Sources */,
