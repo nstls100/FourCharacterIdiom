@@ -11,6 +11,7 @@
 		6B74B3EE1FA752F10048355B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B3ED1FA752F10048355B /* SWRevealViewController.m */; };
 		6B74B3F11FA760430048355B /* SideMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B3F01FA760430048355B /* SideMenuVC.m */; };
 		6BB140291FA2F77900DB0693 /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB140281FA2F77900DB0693 /* DataCell.m */; };
+		6BC774711FA8268B00C3B0C5 /* myWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC774701FA8268B00C3B0C5 /* myWordVC.m */; };
 		6BEB84F41FA1CEAB0028D2D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F31FA1CEAB0028D2D2 /* main.m */; };
 		6BEB84F71FA1CEAB0028D2D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F61FA1CEAB0028D2D2 /* AppDelegate.m */; };
 		6BEB84FD1FA1CEAB0028D2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB84FB1FA1CEAB0028D2D2 /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 		6B74B3F01FA760430048355B /* SideMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuVC.m; sourceTree = "<group>"; };
 		6BB140271FA2F77900DB0693 /* DataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCell.h; sourceTree = "<group>"; };
 		6BB140281FA2F77900DB0693 /* DataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
+		6BC7746F1FA8268B00C3B0C5 /* myWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myWordVC.h; sourceTree = "<group>"; };
+		6BC774701FA8268B00C3B0C5 /* myWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myWordVC.m; sourceTree = "<group>"; };
 		6BEB84EF1FA1CEAB0028D2D2 /* FourCharacterIdiom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourCharacterIdiom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEB84F31FA1CEAB0028D2D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6BEB84F51FA1CEAB0028D2D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 			children = (
 				6B74B3EF1FA760430048355B /* SideMenuVC.h */,
 				6B74B3F01FA760430048355B /* SideMenuVC.m */,
+				6BC7746F1FA8268B00C3B0C5 /* myWordVC.h */,
+				6BC774701FA8268B00C3B0C5 /* myWordVC.m */,
 				6BEB85131FA2C8520028D2D2 /* MainVC.h */,
 				6BEB85141FA2C8520028D2D2 /* MainVC.m */,
 			);
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC774711FA8268B00C3B0C5 /* myWordVC.m in Sources */,
 				6BEB851B1FA2C9EF0028D2D2 /* IdiomLib.m in Sources */,
 				6BEB84F71FA1CEAB0028D2D2 /* AppDelegate.m in Sources */,
 				6B74B3F11FA760430048355B /* SideMenuVC.m in Sources */,

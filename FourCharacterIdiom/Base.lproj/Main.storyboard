@@ -12,7 +12,7 @@
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="MainVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,14 +26,14 @@
                                 <subviews>
                                     <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UB-xN-TfJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <color key="barTintColor" red="0.37254901959999998" green="0.53333333329999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="AXB-pV-vDE"/>
                                         </connections>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.37254901959999998" green="0.53333333329999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1UB-xN-TfJ" secondAttribute="bottom" id="5oB-kC-m3b"/>
                                     <constraint firstAttribute="trailing" secondItem="1UB-xN-TfJ" secondAttribute="trailing" id="TH8-wA-3nK"/>
@@ -166,7 +166,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FAn-Wx-hlr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UPU-Rk-TxK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UPU-Rk-TxK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.37254901959999998" green="0.53333333329999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,6 +212,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Uu-zU-hhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="213.59999999999999" y="850.52473763118451"/>
+        </scene>
+        <!--My WordVC-->
+        <scene sceneID="F32-EX-JNE">
+            <objects>
+                <viewController storyboardIdentifier="myWordVC" id="wRn-be-tSK" customClass="myWordVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RIE-2P-rAr"/>
+                        <viewControllerLayoutGuide type="bottom" id="mnX-SQ-mp3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IsQ-0L-4A7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EJq-Yp-DeV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="c2w-ky-54K">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c2w-ky-54K" id="cWh-68-lpo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wRn-be-tSK" id="Zh4-6r-pw1"/>
+                                    <outlet property="delegate" destination="wRn-be-tSK" id="hm1-Xa-Zb3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EJq-Yp-DeV" firstAttribute="leading" secondItem="IsQ-0L-4A7" secondAttribute="leading" id="Afn-Rd-RaZ"/>
+                            <constraint firstItem="mnX-SQ-mp3" firstAttribute="top" secondItem="EJq-Yp-DeV" secondAttribute="bottom" id="Gqw-nE-d6k"/>
+                            <constraint firstItem="EJq-Yp-DeV" firstAttribute="top" secondItem="RIE-2P-rAr" secondAttribute="bottom" id="S6Z-a4-PDA"/>
+                            <constraint firstAttribute="trailing" secondItem="EJq-Yp-DeV" secondAttribute="trailing" id="kNb-aA-pp4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6eS-AB-cPr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2q-PA-r88" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1640"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QvA-9e-ZIO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9vJ-jn-hTM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gqZ-ct-rfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wRn-be-tSK" kind="relationship" relationship="rootViewController" id="uPh-xn-RSy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdj-FG-Lbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="1640"/>
         </scene>
     </scenes>
     <resources>

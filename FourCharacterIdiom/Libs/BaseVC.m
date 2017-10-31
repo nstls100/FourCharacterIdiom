@@ -25,6 +25,25 @@
 
     [self.navigationController.navigationBar setBackgroundImage:emptyImage forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:emptyImage];
+    
+    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(0x5F88E9)];
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x5F88E9)];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    // SWRevealViewController 설정.
+    SWRevealViewController *revealController = self.revealViewController;
+    
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+    
+    // 네비게이션 바 좌측 상단 버튼 추가.
+    UIButton *topLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [topLeftBtn setFrame:CGRectMake(0, 0, 24, 24)];
+    [topLeftBtn setImage:[UIImage imageNamed:@"ic_menu"] forState:UIControlStateNormal];
+    [topLeftBtn addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *topLeftBtnItem = [[UIBarButtonItem alloc]init];
+    [topLeftBtnItem setCustomView:topLeftBtn];
+    [self.navigationItem setLeftBarButtonItem:topLeftBtnItem];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,39 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // SWRevealViewController 설정.
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-    
     // 네비게이션바 텍스트 삽입 및 텍스트 설정
     [self.navigationItem setTitle:@"사자성어 "];
     
-    
+    // 서치바 백그라운드 색상 설정.
     UIImage *emptyImage = [[UIImage alloc]init];
     [self.searchBar setBackgroundImage:emptyImage];
+    [self.searchBar setBackgroundColor:UIColorFromRGB(0x5F88E9)];
     
     // 네비게이션바 우측 상단 버튼 추가.
     UIButton *topRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [topRightBtn setFrame:CGRectMake(0, 0, 24 , 24)];
     [topRightBtn setImage:[UIImage imageNamed:@"ic_more_horiz"] forState:UIControlStateNormal];
-    
     UIBarButtonItem *topRightBtnItem = [[UIBarButtonItem alloc]init];
     [topRightBtnItem setCustomView:topRightBtn];
     [self.navigationItem setRightBarButtonItem:topRightBtnItem];
     
-    // 네비게이션 바 좌측 상단 버튼 추가.
-    UIButton *topLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [topLeftBtn setFrame:CGRectMake(0, 0, 24 , 24)];
-    [topLeftBtn setImage:[UIImage imageNamed:@"ic_menu"] forState:UIControlStateNormal];
-    [topLeftBtn addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *topLeftBtnItem = [[UIBarButtonItem alloc]init];
-    [topLeftBtnItem setCustomView:topLeftBtn];
-    [self.navigationItem setLeftBarButtonItem:topLeftBtnItem];
-    
+    // db에서 데이터 읽기.
     self.totalArr = [[IdiomLib sharedIdiomLib] dbTest];
-    
 }
 
 #pragma mark - 테이블뷰 델리킷 구현
@@ -90,7 +75,5 @@
     [self.tableView reloadData];
     
 }
-
-
 
 @end
