@@ -12,6 +12,11 @@
 
 @interface IdiomLib : NSObject
 + (IdiomLib*)sharedIdiomLib;
--(NSMutableArray*)dbTest;
--(NSMutableArray*)dbTest1:(NSString *)keyWord;
+
+-(NSMutableArray*)getDbTotalData;
+-(NSMutableArray*)findKeyWordData:(NSString *)keyWord;
+-(NSMutableArray*)findFavoriteKeyWordData:(NSString *)keyWord;
+-(void)insertFavoriteData:(NSString *)ny kkk:(NSString*)korean;
+-(NSString*)getDbPath;
+-(void)copyDbFile;
 @end

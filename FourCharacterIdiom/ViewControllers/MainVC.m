@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // mainbundle에 있는 db 파일을 Document에 복사.
+    [[IdiomLib sharedIdiomLib] copyDbFile];
+
+    
     // 네비게이션바 텍스트 삽입 및 텍스트 설정
     [self.navigationItem setTitle:@"사자성어 "];
     
@@ -35,7 +39,7 @@
     [self.navigationItem setRightBarButtonItem:topRightBtnItem];
     
     // db에서 데이터 읽기.
-    self.totalArr = [[IdiomLib sharedIdiomLib] dbTest];
+    self.totalArr = [[IdiomLib sharedIdiomLib] getDbTotalData];
 }
 
 #pragma mark - 테이블뷰 델리킷 구현
@@ -49,7 +53,21 @@
 {
     DataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     NSDictionary *cellDic = self.totalArr[indexPath.row];
+    cell.idx = indexPath.row;
+    cell.item = cellDic;
+    
     [cell setDataCell:cellDic index:indexPath.row];
+    
+    // > block
+    cell.block = ^(NSInteger idx, NSString *name){
+        [[IdiomLib sharedIdiomLib] insertFavoriteData:@"Y" kkk:name];
+        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[IdiomLib sharedIdiomLib] getDbTotalData];
+//            [self.tableView reloadData];
+//        });
+    };
+
     return cell;
 }
 
@@ -58,7 +76,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - 서비차 델리킷 구현
+#pragma mark - 서치바 델리킷 구현
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -66,10 +84,10 @@
     
     if([searchText isEqualToString:@""])
     {
-        self.totalArr = [[IdiomLib sharedIdiomLib] dbTest];
+        self.totalArr = [[IdiomLib sharedIdiomLib] getDbTotalData];
         [self.searchBar resignFirstResponder];
     }else{
-        self.totalArr = [[IdiomLib sharedIdiomLib] dbTest1:searchText];
+        self.totalArr = [[IdiomLib sharedIdiomLib] findKeyWordData:searchText];
     }
     
     [self.tableView reloadData];

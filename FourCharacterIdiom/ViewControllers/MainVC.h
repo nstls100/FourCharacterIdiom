@@ -15,5 +15,4 @@
 @property (strong, nonatomic) NSMutableArray *totalArr;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-
 @end

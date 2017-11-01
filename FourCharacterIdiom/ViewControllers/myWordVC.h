@@ -7,7 +7,10 @@
 //
 
 #import "BaseVC.h"
+#import "DataCell.h"
 
 @interface myWordVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSMutableArray *favoritesArr;
 
 @end

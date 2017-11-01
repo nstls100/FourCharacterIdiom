@@ -12,6 +12,7 @@
 		6B74B3F11FA760430048355B /* SideMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B74B3F01FA760430048355B /* SideMenuVC.m */; };
 		6BB140291FA2F77900DB0693 /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB140281FA2F77900DB0693 /* DataCell.m */; };
 		6BC774711FA8268B00C3B0C5 /* myWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC774701FA8268B00C3B0C5 /* myWordVC.m */; };
+		6BC774751FA9E1DC00C3B0C5 /* idiom.db in Resources */ = {isa = PBXBuildFile; fileRef = 6BC774741FA9E1DC00C3B0C5 /* idiom.db */; };
 		6BEB84F41FA1CEAB0028D2D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F31FA1CEAB0028D2D2 /* main.m */; };
 		6BEB84F71FA1CEAB0028D2D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB84F61FA1CEAB0028D2D2 /* AppDelegate.m */; };
 		6BEB84FD1FA1CEAB0028D2D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB84FB1FA1CEAB0028D2D2 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		6BEB85151FA2C8520028D2D2 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB85141FA2C8520028D2D2 /* MainVC.m */; };
 		6BEB85181FA2C9D50028D2D2 /* CommonLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB85171FA2C9D50028D2D2 /* CommonLib.m */; };
 		6BEB851B1FA2C9EF0028D2D2 /* IdiomLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB851A1FA2C9EF0028D2D2 /* IdiomLib.m */; };
-		6BEB851E1FA2CE480028D2D2 /* idiom.db in Resources */ = {isa = PBXBuildFile; fileRef = 6BEB851D1FA2CE480028D2D2 /* idiom.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +34,7 @@
 		6BB140281FA2F77900DB0693 /* DataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
 		6BC7746F1FA8268B00C3B0C5 /* myWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myWordVC.h; sourceTree = "<group>"; };
 		6BC774701FA8268B00C3B0C5 /* myWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myWordVC.m; sourceTree = "<group>"; };
+		6BC774741FA9E1DC00C3B0C5 /* idiom.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = idiom.db; sourceTree = "<group>"; };
 		6BEB84EF1FA1CEAB0028D2D2 /* FourCharacterIdiom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourCharacterIdiom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEB84F31FA1CEAB0028D2D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6BEB84F51FA1CEAB0028D2D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		6BEB85171FA2C9D50028D2D2 /* CommonLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLib.m; sourceTree = "<group>"; };
 		6BEB85191FA2C9EF0028D2D2 /* IdiomLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdiomLib.h; sourceTree = "<group>"; };
 		6BEB851A1FA2C9EF0028D2D2 /* IdiomLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdiomLib.m; sourceTree = "<group>"; };
-		6BEB851D1FA2CE480028D2D2 /* idiom.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = idiom.db; sourceTree = "<group>"; };
 		C17F2B23656833AD94DC9091 /* Pods-FourCharacterIdiom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourCharacterIdiom.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourCharacterIdiom/Pods-FourCharacterIdiom.release.xcconfig"; sourceTree = "<group>"; };
 		F5ABCA2F10BB9D71813D0BE7 /* Pods-FourCharacterIdiom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourCharacterIdiom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourCharacterIdiom/Pods-FourCharacterIdiom.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,7 +168,7 @@
 		6BEB851C1FA2CE480028D2D2 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				6BEB851D1FA2CE480028D2D2 /* idiom.db */,
+				6BC774741FA9E1DC00C3B0C5 /* idiom.db */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			files = (
 				6BEB85021FA1CEAB0028D2D2 /* LaunchScreen.storyboard in Resources */,
 				6BEB84FF1FA1CEAB0028D2D2 /* Assets.xcassets in Resources */,
-				6BEB851E1FA2CE480028D2D2 /* idiom.db in Resources */,
+				6BC774751FA9E1DC00C3B0C5 /* idiom.db in Resources */,
 				6BEB84FD1FA1CEAB0028D2D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
