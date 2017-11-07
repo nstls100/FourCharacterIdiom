@@ -19,4 +19,5 @@
 -(void)insertFavoriteData:(NSString *)ny kkk:(NSString*)korean;
 -(NSString*)getDbPath;
 -(void)copyDbFile;
+-(NSMutableArray*)getRandomData;
 @end

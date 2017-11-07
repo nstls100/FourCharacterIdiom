@@ -31,7 +31,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,8 +45,6 @@
     }else if (row == 1){
         text = @"학습";
     }else if (row == 2){
-        text = @"문제풀이";
-    }else if (row == 3){
         text = @"나만의 단어장";
     }
     
@@ -66,7 +64,14 @@
         
         [revealController pushFrontViewController:navigationController animated:YES];
     }
-    else if (indexPath.row == 3)
+    else if (indexPath.row == 1)
+    {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"StudyModeVC"];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        [revealController pushFrontViewController:navigationController animated:YES];
+    }
+    else if (indexPath.row == 2)
     {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"myWordVC"];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];

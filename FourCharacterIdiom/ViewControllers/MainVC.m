@@ -40,6 +40,7 @@
     
     // db에서 데이터 읽기.
     self.totalArr = [[IdiomLib sharedIdiomLib] getDbTotalData];
+    //self.totalArr = [[IdiomLib sharedIdiomLib] getRandomData];
 }
 
 #pragma mark - 테이블뷰 델리킷 구현
@@ -60,12 +61,17 @@
     
     // > block
     cell.block = ^(NSInteger idx, NSString *name){
-        [[IdiomLib sharedIdiomLib] insertFavoriteData:@"Y" kkk:name];
+        NSString *isNY;
         
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [[IdiomLib sharedIdiomLib] getDbTotalData];
-//            [self.tableView reloadData];
-//        });
+        if([cellDic[@"Favorites"] isEqualToString:@"Y"]){
+            isNY = @"N";
+        }else{
+            isNY = @"Y";
+        }
+        
+        [[IdiomLib sharedIdiomLib] insertFavoriteData:isNY kkk:name];
+        self.totalArr = [[IdiomLib sharedIdiomLib] getDbTotalData];
+        [self.tableView reloadData];
     };
 
     return cell;

@@ -26,7 +26,7 @@
     if (_block){
         _block(_idx, [_item objectForKey:@"KoreaCharacters"]);
         
-        NSLog(@"들어옴3");
+        NSLog(@"in block");
     }
 }
 

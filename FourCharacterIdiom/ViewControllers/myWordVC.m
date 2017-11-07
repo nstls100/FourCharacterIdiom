@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 네비게이션바 텍스트 삽입 및 텍스트 설정
-    [self.navigationItem setTitle:@"나만의 단어장 "];
+    [self.navigationItem setTitle:@"나만의 단어장"];
     
     _favoritesArr =  [[IdiomLib sharedIdiomLib] findFavoriteKeyWordData:@"Y"];
 }

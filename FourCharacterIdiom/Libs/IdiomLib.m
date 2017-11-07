@@ -166,7 +166,7 @@ static IdiomLib *sharedIdiomObj;
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString* documentDir = [NSString stringWithFormat:@"%@/%@",[paths objectAtIndex:0], @"idiom.db"];
-    NSLog(@"%@", documentDir);
+    //NSLog(@"%@", documentDir);
     
     return documentDir;
 }
@@ -189,5 +189,42 @@ static IdiomLib *sharedIdiomObj;
     
     [db close];
 }
+
+-(NSMutableArray*)getRandomData
+{
+    FMDatabase *db = [FMDatabase databaseWithPath:[self getDbPath]];
+    
+    if (![db open]) {
+        db = nil;
+    }
+    
+    //WHERE Favorites LIKE ?", [NSString stringWithFormat:@"%%%@%%", keyWord]];
+    NSMutableArray *idiomData = [[NSMutableArray alloc]init];
+    
+    FMResultSet *s = [db executeQuery:@"SELECT * FROM data ORDER BY RANDOM() LIMIT 4 WHERE Favorites LIKE ?", [NSString stringWithFormat:@"%%%@%%", @"Y"]];
+    while ([s next]) {
+        
+        NSMutableDictionary *tmpIdiom = [[NSMutableDictionary alloc]init];
+        
+        NSString *chineseStr = [s stringForColumn:@"ChineseCharacters"];
+        [tmpIdiom setObject:chineseStr forKey: @"ChineseCharacters"];
+        
+        NSString *koreanStr = [s stringForColumn:@"KoreaCharacters"];
+        [tmpIdiom setObject:koreanStr forKey: @"KoreaCharacters"];
+        
+        NSString *meaningStr = [s stringForColumn:@"Meaning"];
+        [tmpIdiom setObject:meaningStr forKey: @"Meaning"];
+        
+        NSString *favorites = [s stringForColumn:@"Favorites"];
+        [tmpIdiom setObject:favorites forKey: @"Favorites"];
+        
+        [idiomData addObject:tmpIdiom];
+    }
+    
+    [db close];
+    return idiomData;
+    
+}
+
 
 @end
