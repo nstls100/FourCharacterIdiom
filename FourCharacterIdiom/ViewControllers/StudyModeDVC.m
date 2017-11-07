@@ -99,6 +99,7 @@
      _count++;
     
     if(_count > self.randomArr.count){
+        _count = self.randomArr.count;
         NSLog(@"범위 over!!");
     }else{
         [self work];
