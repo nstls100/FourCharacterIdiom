@@ -8,9 +8,10 @@
 
 #import "BaseVC.h"
 #import "DataCell.h"
+#import "DetailWordVC.h"
 
-@interface myWordVC : BaseVC<UITableViewDelegate, UITableViewDataSource>
+@interface myWordVC : BaseVC<UITableViewDelegate, UITableViewDataSource, TableViewSelectDelegate>
 
 @property (strong, nonatomic) NSMutableArray *favoritesArr;
-
+@property (strong, nonatomic) NSDictionary *tmp;
 @end

@@ -10,5 +10,5 @@
 #import "IdiomLib.h"
 
 @interface BaseVC : UIViewController
-
+-(void) showMessage:(NSString*)message;
 @end

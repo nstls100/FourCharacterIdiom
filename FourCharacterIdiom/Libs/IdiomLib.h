@@ -10,7 +10,9 @@
 #import "FMDB.h"
 
 
+
 @interface IdiomLib : NSObject
+
 + (IdiomLib*)sharedIdiomLib;
 
 -(NSMutableArray*)getDbTotalData;

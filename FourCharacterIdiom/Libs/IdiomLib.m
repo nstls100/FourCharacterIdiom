@@ -223,8 +223,6 @@ static IdiomLib *sharedIdiomObj;
     
     [db close];
     return idiomData;
-    
 }
-
 
 @end

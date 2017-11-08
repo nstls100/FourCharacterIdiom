@@ -41,4 +41,21 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    _tmp = self.favoritesArr[indexPath.row];
+    
+    DetailWordVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailWordVC"];
+    vc.Delegate = self;
+    
+    [self.navigationController pushViewController:vc animated:true];
+    
+}
+
+-(NSDictionary *) getMessage{
+    return _tmp;
+}
+
 @end

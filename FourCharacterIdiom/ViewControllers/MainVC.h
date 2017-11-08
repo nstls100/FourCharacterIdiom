@@ -8,11 +8,15 @@
 
 #import "BaseVC.h"
 #import "DataCell.h"
+#import "DetailWordVC.h"
 
-@interface MainVC : BaseVC<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface MainVC : BaseVC<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, TableViewSelectDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UIView *viewIdiom;
 @property (strong, nonatomic) NSMutableArray *totalArr;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSDictionary *tmp;
+
+
 
 @end

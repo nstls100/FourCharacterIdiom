@@ -98,9 +98,9 @@
 - (IBAction)nextBtnAction:(id)sender {
      _count++;
     
-    if(_count > self.randomArr.count){
+    if(_count >= self.randomArr.count){
         _count = self.randomArr.count;
-        NSLog(@"범위 over!!");
+        [self showMessage:@"마지막 단어입니다."];
     }else{
         [self work];
     }
@@ -111,6 +111,7 @@
     
     if(_count < 0){
         _count = 0;
+        [self showMessage:@"첫번째 단어입니다."];
     }else{
         [self work];
     }

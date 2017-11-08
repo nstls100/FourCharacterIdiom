@@ -51,4 +51,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) showMessage:(NSString*)message {
+    //Step 1: Create a UIAlertController
+    UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"오류"
+                                                                               message: message
+                                                                        preferredStyle:UIAlertControllerStyleAlert                   ];
+    
+    //Step 2: Create a UIAlertAction that can be added to the alert
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             //Do some thing here, eg dismiss the alertwindow
+                             [myAlertController dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    //Step 3: Add the UIAlertAction ok that we just created to our AlertController
+    [myAlertController addAction: ok];
+    
+    //Step 4: Present the alert to the user
+    
+    [self presentViewController:myAlertController animated:YES completion:nil];
+}
+
 @end
