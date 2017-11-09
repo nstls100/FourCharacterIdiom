@@ -30,13 +30,13 @@
     [self.searchBar setBackgroundImage:emptyImage];
     [self.searchBar setBackgroundColor:UIColorFromRGB(0x5F88E9)];
     
-    // 네비게이션바 우측 상단 버튼 추가.
-    UIButton *topRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [topRightBtn setFrame:CGRectMake(0, 0, 24 , 24)];
-    [topRightBtn setImage:[UIImage imageNamed:@"ic_more_horiz"] forState:UIControlStateNormal];
-    UIBarButtonItem *topRightBtnItem = [[UIBarButtonItem alloc]init];
-    [topRightBtnItem setCustomView:topRightBtn];
-    [self.navigationItem setRightBarButtonItem:topRightBtnItem];
+//    // 네비게이션바 우측 상단 버튼 추가.
+//    UIButton *topRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [topRightBtn setFrame:CGRectMake(0, 0, 24 , 24)];
+//    [topRightBtn setImage:[UIImage imageNamed:@"ic_more_horiz"] forState:UIControlStateNormal];
+//    UIBarButtonItem *topRightBtnItem = [[UIBarButtonItem alloc]init];
+//    [topRightBtnItem setCustomView:topRightBtn];
+//    [self.navigationItem setRightBarButtonItem:topRightBtnItem];
     
     // db에서 데이터 읽기.
     self.totalArr = [[IdiomLib sharedIdiomLib] getDbTotalData];

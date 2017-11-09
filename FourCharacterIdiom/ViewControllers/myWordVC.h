@@ -12,6 +12,7 @@
 
 @interface myWordVC : BaseVC<UITableViewDelegate, UITableViewDataSource, TableViewSelectDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *favoritesArr;
 @property (strong, nonatomic) NSDictionary *tmp;
 @end

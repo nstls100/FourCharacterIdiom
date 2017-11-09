@@ -20,7 +20,53 @@
     // 네비게이션바 텍스트 삽입 및 텍스트 설정
     [self.navigationItem setTitle:@"나만의 단어장"];
     
+    // 네비게이션 바 좌측 상단 버튼 추가.
+    UIButton *topRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [topRightBtn setFrame:CGRectMake(0, 0, 24, 24)];
+    [topRightBtn setImage:[UIImage imageNamed:@"ic_delete"] forState:UIControlStateNormal];
+    [topRightBtn addTarget:self action:@selector(DeleteBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *topRightBtnItem = [[UIBarButtonItem alloc]init];
+    [topRightBtnItem setCustomView:topRightBtn];
+    [self.navigationItem setRightBarButtonItem:topRightBtnItem];
+    
     _favoritesArr =  [[IdiomLib sharedIdiomLib] findFavoriteKeyWordData:@"Y"];
+}
+
+-(void)DeleteBtnAction:(UIButton *)sender
+{
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"경고"
+                                  message:@"전체 삭제하시겠습니까?"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [[IdiomLib sharedIdiomLib] deleteFavoritesItems];
+                             _favoritesArr =  [[IdiomLib sharedIdiomLib] findFavoriteKeyWordData:@"Y"];
+                             [self.tableView reloadData];
+                             
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
 }
 
 #pragma mark - 나만의 단어장 tableView 델리킷

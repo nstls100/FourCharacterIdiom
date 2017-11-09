@@ -225,4 +225,23 @@ static IdiomLib *sharedIdiomObj;
     return idiomData;
 }
 
+-(void)deleteFavoritesItems
+{
+    FMDatabase *db = [FMDatabase databaseWithPath:[self getDbPath]];
+    
+    if (![db open]) {
+        db = nil;
+    }
+    
+    BOOL success = [db executeUpdate:@"UPDATE data SET Favorites = ? WHERE Favorites = ?",@"N",@"Y"];
+    
+    if(success){
+        NSLog(@"succ");
+    }else{
+        NSLog(@"fail");
+    }
+    
+    [db close];
+}
+
 @end

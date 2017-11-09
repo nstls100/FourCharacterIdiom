@@ -22,4 +22,5 @@
 -(NSString*)getDbPath;
 -(void)copyDbFile;
 -(NSMutableArray*)getRandomData;
+-(void)deleteFavoritesItems;
 @end

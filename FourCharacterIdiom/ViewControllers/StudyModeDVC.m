@@ -33,6 +33,30 @@
         self.randomArr = [[IdiomLib sharedIdiomLib] getDbTotalData];
     }else{
         self.randomArr = [[IdiomLib sharedIdiomLib] findFavoriteKeyWordData:@"Y"];
+        if(self.randomArr.count == 0){
+            UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"오류"
+                                                                                       message:@"단어장에 사자성어가 존재하지 않습니다."
+                                                                                preferredStyle:UIAlertControllerStyleAlert                   ];
+            
+            //Step 2: Create a UIAlertAction that can be added to the alert
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     //Do some thing here, eg dismiss the alertwindow
+                                     //[myAlertController dismissViewControllerAnimated:YES completion:nil];
+                                     [self.navigationController popViewControllerAnimated:YES];
+                                 }];
+            
+            //Step 3: Add the UIAlertAction ok that we just created to our AlertController
+            [myAlertController addAction: ok];
+            
+            //Step 4: Present the alert to the user
+            
+            [self presentViewController:myAlertController animated:YES completion:nil];
+            return;
+        }
     }
     
     self.count = 0;
